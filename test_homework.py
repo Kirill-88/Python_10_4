@@ -22,12 +22,12 @@ def test_rectangle():
     a = 10
     b = 20
     # TODO сосчитайте периметр
-    perimeter = 10*2 + 20*2
+    perimeter = (a+b)*2
 
     assert perimeter == 60
 
     # TODO сосчитайте площадь
-    area = 10 * 20
+    area = a * b
 
     assert area == 200
 
@@ -54,8 +54,7 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 (включая обе границы) и отсортируйте его по возрастанию.
     """
     # TODO создайте список
-    l = [random.randint(0, 101), random.randint(0, 101), random.randint(0, 101), random.randint(0, 101), random.randint(0, 101)
-         , random.randint(0, 101), random.randint(0, 101), random.randint(0, 101), random.randint(0, 101), random.randint(0, 101)]
+    l = [random.randint(1, 100) for i in range(10)]
     l.sort()
 
     assert len(l) == 10
@@ -66,12 +65,13 @@ def test_unique_elements():
     """
     Удалите из списка все повторяющиеся элементы
     """
-    l = list(set([1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]))
+    l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
+    l = list(set(l))
 
     assert isinstance(l, list)
     assert len(l) == 10
-    assert l == list(set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+    assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 def test_dicts():
